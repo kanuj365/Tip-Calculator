@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="index.js"></script>  
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>tip calculator</h1>
+        <div class="box">
+          
+            <label >Bill Amount</label>
+            <input type="text" name="" id="bill_amount">
+            <br>
+            <label>tip perc</label>
+            <input type="text" name="" id="tip_price">
+            <br>
+            <label>tip amount</label>
+            <input type="text" name="" id="tip_total" disabled>
+            <br>
+            <label>total billed</label>
+            <input type="text" name="" id="total_billed" disabled>
+            <br>
+            <button onclick="cal()">calculate</button>
+        </div>
+    </main>
+</body>
+</html>
+
+*{
+    margin:0; padding:0;box-sizing: border-box; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+main{
+    height:100vh; background-image:linear-gradient(to right top, rgb(168, 168, 13), rgb(180, 148, 88),#3f6db1,rgb(209, 184, 184) ) ;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.box{
+    max-width: 500px; height: auto;
+    background-color: #00cec9; padding:50px;
+    box-shadow: 1px 1px 15px 3px #75bdd1;
+}
+h1{
+    margin-bottom: 10px; text-shadow: 1px 2px 1px white; text-transform: capitalize;
+}
+label{
+    display:block; text-transform: capitalize; margin-top: 10px;
+}
+input{
+    width:300px; padding:5px;
+
+}
+button{
+    border-radius:10px;
+    padding:15px 30px;
+    font-size:0.8rem;
+    text-transform:uppercase;
+    border:none;
+    color :white;
+    background:#75bdd1;
+    box-shadow: 1px 1px 5px 1px #95bdd4;
+margin-top:20px;
+}
+
+const cal=()=>{
+    var amount=document.getElementById('bill_amount').value;
+    alert(amount)
+    var perc=document.getElementById('tip_price').value;
+    alert(perc)
+    var tip=amount*(perc/100);
+    alert(tip)
+    var total=tip+Number(amount);
+    document.getElementById('tip_total').value=tip;
+    document.getElementById('total_billed').value=total;
+
+}
+//
+
+
+
+
+
